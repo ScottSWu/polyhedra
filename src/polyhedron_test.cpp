@@ -18,7 +18,7 @@ int main() {
     for (auto itr = polyhedra.begin(); itr != polyhedra.end(); itr++) {
         auto polyhedron = *itr;
         // Display polyhedron info
-        printf("Examining the %s -\n", polyhedron->get_info().c_str());
+        printf("Examining the %s:\n", polyhedron->get_info().c_str());
 
         // Check that the polyhedron is convex
         if (!polyhedron->is_convex()) {
@@ -29,7 +29,7 @@ int main() {
         // Compute the volume
         double radius = ((double) std::rand() / (double) RAND_MAX) * 5.0 + 1.0;
         double volume = polyhedron->get_volume(radius);
-        printf("    Volume: %llf @ radius = %llf - ", volume, radius);
+        printf("    Volume: %llf @ radius = %llf\n", volume, radius);
 
         // Ensure the volume is valid (less than that of a sphere)
         double sphere_volume = 4.0 / 3.0 * 3.1415926535 * pow(radius, 3.0);
@@ -38,7 +38,16 @@ int main() {
             return 1;
         }
 
-        printf("All Good\n");
+        // Ensure Euler's formula holds
+        int f = polyhedron->get_faces();
+        int e = polyhedron->get_edges();
+        int v = polyhedron->get_vertices();
+        printf("    F = %d, V = %d, E = %d\n", f, v, e);
+
+        if (f + v != e + 2) {
+            printf("Error: Euler's formula does not hold! (F + V - E = 2)\n");
+            return 1;
+        }
     }
     printf("All polyhedra pass!\n");
     return 0;
