@@ -16,20 +16,21 @@ of a Snub Dodecahedron, but to get a sense of Git and OOP in C++.
 
 ## Pick a polyhedron
 
-Pick and choose a (uniform convex polyhedron)
-[https://en.wikipedia.org/wiki/List_of_uniform_polyhedra#Convex_uniform_polyhedra]
+Pick and choose a [uniform convex polyhedron]
+(https://en.wikipedia.org/wiki/List_of_uniform_polyhedra#Convex_uniform_polyhedra)
 . This will be the polyhedron you implement for this project.
 
 ## Fork this repository
 
 Head to https://github.com/ScottSWu/polyhedra, and click on the *Fork* button.
-[img]https://scwu.io/media/qizwpy.png[/img]
+
+![https://scwu.io/media/qizwpy.png](https://scwu.io/media/qizwpy.png)
 
 This will create a new repository under your own account.
 
 ## Clone the repository to your computer
 
-Install (Git)[https://git-scm.com/]. It's recommended you run in a unix-based
+Install [Git](https://git-scm.com/). It's recommended you run in a unix-based
 environment.
 
 On Windows or Mac, download and run their installer. On Linux distributions,
@@ -42,7 +43,7 @@ sudo yum install git-all # Fedora
 
 Verify `git` is installed by running `git -v`. Then clone this repository with:
 ```
-git clone https:/github.com/<your username>/polyhedra.git
+git clone https://github.com/<your username>/polyhedra.git
 ```
 
 A folder called `polyhedra` will be created with the files from the repository.
