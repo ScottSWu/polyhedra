@@ -272,3 +272,32 @@ Click "compare accross forks" to show all forks of the project. In the
 
 ![https://scwu.io/media/pijqda.png](https://scwu.io/media/pijqda.png)
 ![https://scwu.io/media/xipblu.png](https://scwu.io/media/xipblu.png)
+
+## Editing a branch
+
+If you need to make additional edits after sending the pull request, make
+changes directly to your local files, commit, fetch rebase and push them as
+normal. They will update automatically on the pull request online.
+
+```
+<edit files>
+make test
+git add -A
+git commit -m "message"
+git fetch upstream
+git rebase upstream/master
+<resolve conflicts>
+git push
+```
+
+Merge conflicts might look daunting at first, but it mostly ends up being
+"which version do you want to use?". During the conflict, git will provide both
+versions in the file itself.
+
+After resolving a conflict, continue the rebase until it finishes.
+```
+git add -A
+git rebase --continue
+```
+
+Finally push again to the branch.
