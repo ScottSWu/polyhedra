@@ -5,16 +5,18 @@
 
 #include "polyhedron.h"
 
+#include "snub_cube.h"
+
 #include "snub_dodecahedron.h"
 #include "truncated_tetrahedron.h"
 
 int main() {
     std::vector<std::shared_ptr<Polyhedron>> polyhedra;
-
+ 
     // Add your name and polyhedron here!
     polyhedra.push_back(std::make_shared<SnubDodecahedron>("Scott Wu"));
     polyhedra.push_back(std::make_shared<TruncatedTetrahedron>("Kevin Jiang"));
-
+    polyhedra.push_back(std::make_shared<SnubCube>("Jeffery Lee"));
     // Don't edit below
     std::srand(1996);
     for (auto itr = polyhedra.begin(); itr != polyhedra.end(); itr++) {
