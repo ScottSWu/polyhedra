@@ -100,7 +100,7 @@ need two classes - `string` and `Polyhedron`.
 #include <string>
 
 // The quotations signify this is a user library (in the same project)
-#include "Polyhedron.h"
+#include "polyhedron.h"
 ```
 
 ## Define the class

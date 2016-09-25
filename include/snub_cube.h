@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include "Polyhedron.h"
+#include "polyhedron.h"
 
 class SnubCube : public Polyhedron {
 private:

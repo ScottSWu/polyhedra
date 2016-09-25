@@ -1,7 +1,7 @@
 #ifndef _TRUNCATED_TETRAHEDRON
 #define _TRUNCATED_TETRAHEDRON
 #include <string>
-#include "Polyhedron.h"
+#include "polyhedron.h"
 
 class TruncatedTetrahedron : public Polyhedron {
 private:
