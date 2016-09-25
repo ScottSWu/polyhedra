@@ -14,9 +14,6 @@ public:
     /** Get the name of the polyhedron */
     virtual std::string get_name();
 
-    /** Get the author of the polyhedron class */
-    std::string get_author();
-
     /** Get the number of faces in this polyhedron */
     virtual unsigned int get_faces();
 
