@@ -2,6 +2,8 @@
 
 #include <cmath>
 
+// Class definitions start with <ClassName>::function
+//                                        Superclass constructor is called here
 SnubDodecahedron::SnubDodecahedron(std::string author) : Polyhedron(author) {
     _phi = (1.0 + sqrt(5.0)) * 0.5;
     _xi = cbrt(_phi * 0.5 + 0.5 * sqrt(_phi - 5.0 / 27.0)) +
@@ -12,9 +14,12 @@ SnubDodecahedron::SnubDodecahedron(std::string author) : Polyhedron(author) {
     _volume = _volume / pow(2.15583737, 3.0);
 }
 
+// Functions may be empty, but they still need to be defined
 SnubDodecahedron::~SnubDodecahedron() {
 }
 
+// Class functions with return values have the return type listed first
+// Also note that there is no 'virtual' keyword here
 std::string SnubDodecahedron::get_name() {
     return "Snub Dodecahedron";
 }
