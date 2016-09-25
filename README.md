@@ -266,5 +266,9 @@ git push
 Head to the main repository page https://github.com/ScottSWu/polyhedra and
 click on the "Pull requests" tab and create a new pull request.
 
-In the "compare" tab, change it from "compare: master" to your fork. Then hit
+Click "compare accross forks" to show all forks of the project. In the
+"compare" tab, change it from "compare: master" to your fork. Then hit
 "Create pull request", fill out the information and submit.
+
+![https://scwu.io/media/pijqda.png](https://scwu.io/media/pijqda.png)
+![https://scwu.io/media/xipblu.png](https://scwu.io/media/xipblu.png)
