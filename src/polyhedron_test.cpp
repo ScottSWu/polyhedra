@@ -17,6 +17,7 @@ int main() {
     polyhedra.push_back(std::make_shared<SnubDodecahedron>("Scott Wu"));
     polyhedra.push_back(std::make_shared<TruncatedTetrahedron>("Kevin Jiang"));
     polyhedra.push_back(std::make_shared<SnubCube>("Jeffery Lee"));
+    polyhedra.push_back(std::make_shared<Tetrahedron>("Emily Leng"));
     // Don't edit below
     std::srand(1996);
     for (auto itr = polyhedra.begin(); itr != polyhedra.end(); itr++) {
@@ -56,3 +57,4 @@ int main() {
     printf("All polyhedra pass!\n");
     return 0;
 }
+
