@@ -41,7 +41,8 @@ sudo pacman -S git       # Arch
 sudo yum install git-all # Fedora
 ```
 
-Verify `git` is installed by running `git -v`. Then clone this repository with:
+Verify `git` is installed by running `git --version`. Then clone this repository
+with:
 ```
 git clone https://github.com/<your username>/polyhedra.git
 ```
@@ -219,8 +220,51 @@ Otherwise it will print info and run tests on your polyhedron.
 
 # Commit and push
 
-TODO
+If all tests pass, we're good to add it to the repository. You can view all your
+changed files with `git status` and `git diff`.
+
+If you're satisfied with your changes, and don't see any extraneous files being
+added, you can stage your files for committing by running `git add -A`.
+
+Type `git status` again and you will see the changed files are now ready to be
+committed.
+
+Commit with `git commit` and add your message. Alternatively you can use
+`git commit -m "<message>"` to add a message directly from the command line.
 
 # Send a pull request to add to the main repository
 
-TODO
+## Make sure the repo is up to date with the main repository
+
+First, make sure your repo is up to date with the main repository. To identify
+what the main repository is, run `git remote -v`. `origin` identifies your fork
+while `upstream` identifies the original repo. If there is no `upstream`, add it
+by running:
+```
+git remote add upstream https://github.com/ScottSWu/polyhedra.git
+```
+
+Now you can fetch the changes from upstream.
+```
+git fetch upstream
+```
+
+This will download the changes, but not apply them to your files yet. To apply,
+run:
+```
+git rebase upstream/master
+```
+
+If there are any conflicts, resolve them with the text editor. Afterwards, push
+these changes to your fork.
+```
+git push
+```
+
+## Send a pull request
+
+Head to the main repository page https://github.com/ScottSWu/polyhedra and
+click on the "Pull requests" tab and create a new pull request.
+
+In the "compare" tab, change it from "compare: master" to your fork. Then hit
+"Create pull request", fill out the information and submit.
