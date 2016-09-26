@@ -11,6 +11,8 @@
 #include "truncated_tetrahedron.h"
 #include "tetrahedron.h"
 #include "cube.h"
+#include "octahedron.h"
+
 int main() {
     std::vector<std::shared_ptr<Polyhedron>> polyhedra;
  
@@ -20,6 +22,7 @@ int main() {
     polyhedra.push_back(std::make_shared<SnubCube>("Jeffery Lee"));
     polyhedra.push_back(std::make_shared<Tetrahedron>("Emily Leng"));
     polyhedra.push_back(std::make_shared<Cube>("Jimmy Chen"));
+    polyhedra.push_back(std::make_shared<Octahedron>("Oscar Pacheco"));
     // Don't edit below
     std::srand(1996);
     for (auto itr = polyhedra.begin(); itr != polyhedra.end(); itr++) {

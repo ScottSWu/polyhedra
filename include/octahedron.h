@@ -1,22 +1,18 @@
-#ifndef _CUBE
-#define _CUBE
+#ifndef _OCTAHEDRON
+#define _OCTAHEDRON
+
 #include <string>
 #include "polyhedron.h"
 
-
-class Cube : public Polyhedron {
-
-// Anything following this will be a public member of the class
+class Octahedron : public Polyhedron {
+private:
+	double _volume;
 public:
-    // Constructor - takes the author's name as an input
-    Cube(std::string author);
-    // Destructor
-    virtual ~Cube();
-
+	Octahedron(std::string author);
+    virtual ~Octahedron();
 
     /** Get the name of the polyhedron */
     virtual std::string get_name();
-
 
     /** Get the number of faces in this polyhedron */
     virtual unsigned int get_faces();
@@ -32,7 +28,6 @@ public:
 
     /** Is this polyhedron convex */
     virtual bool is_convex();
-
 };
 
 #endif
