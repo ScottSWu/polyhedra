@@ -132,7 +132,7 @@ public:
 
 ## Define the inherited functions
 
-Since we have subclassed `Fruit`, we can (and must*) override `virtual`
+Since we have subclassed `Fruit`, we can (and must\*) override `virtual`
 functions from the original `Fruit` class. (You will quickly learn the cpp is
 a language full of exceptions. Feel free to google *pure virtual functions.*
 
