@@ -133,8 +133,8 @@ public:
 ## Define the inherited functions
 
 Since we have subclassed `Fruit`, we can (and must\*) override `virtual`
-functions from the original `Fruit` class. (You will quickly learn the cpp is
-a language full of exceptions. Feel free to google *pure virtual functions.*
+functions from the original `Fruit` class. (\*You will quickly learn that cpp is
+a language full of exceptions. Feel free to google *pure virtual functions*).
 
 Take a look at `fruit.h` from the `include` folder. Copy any function with
 the `virtual` modifier into your own class.
