@@ -48,8 +48,8 @@ with:
 git clone https://github.com/<your username>/fruits.git
 ```
 
-A folder called `fruits` will be created with the files from the repository.
-Enter this new directory in the terminal using `cd fruits`.
+A folder called `polyhedra` will be created with the files from the repository.
+Enter this new directory in the terminal using `cd polyhedra`.
 
 # Create files
 
@@ -132,8 +132,9 @@ public:
 
 ## Define the inherited functions
 
-Since we have subclassed `Fruit`, we can (and must) override `virtual`
-functions from the original `Fruit` class.
+Since we have subclassed `Fruit`, we can (and must*) override `virtual`
+functions from the original `Fruit` class. (You will quickly learn the cpp is
+a language full of exceptions. Feel free to google *pure virtual functions.*
 
 Take a look at `fruit.h` from the `include` folder. Copy any function with
 the `virtual` modifier into your own class.
@@ -247,7 +248,7 @@ what the main repository is, run `git remote -v`. `origin` identifies your fork
 while `upstream` identifies the original repo. If there is no `upstream`, add it
 by running:
 ```
-git remote add upstream https://github.com/TrevorEdwards/fruits.git
+git remote add upstream https://github.com/TrevorEdwards/polyhedra.git
 ```
 
 Now you can fetch the changes from upstream.
@@ -272,7 +273,7 @@ git push
 Head to the main repository page https://github.com/TrevorEdwards/polyhedra and
 click on the "Pull requests" tab and create a new pull request.
 
-Click "compare accross forks" to show all forks of the project. In the
+Click "compare across forks" to show all forks of the project. In the
 "compare" tab, change it from "compare: master" to your fork. Then hit
 "Create pull request", fill out the information and submit.
 
@@ -282,7 +283,7 @@ Click "compare accross forks" to show all forks of the project. In the
 ## Editing a branch
 
 If you need to make additional edits after sending the pull request, make
-changes directly to your local files, commit, fetch rebase and push them as
+changes directly to your local files, commit, fetch, rebase, and push them as
 normal. They will update automatically on the pull request online.
 
 ```
