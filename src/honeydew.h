@@ -8,7 +8,7 @@
 class HoneyDew : public Fruit
 {
 public:
-     HoneyDew();
+     HoneyDew(std::string);
      virtual ~HoneyDew(){};
 
      virtual std::string get_name() override;

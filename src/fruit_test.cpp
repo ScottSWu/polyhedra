@@ -18,7 +18,7 @@ int main() {
  
     // Add your name and fruit  here!
     fruits.push_back(std::make_shared<Watermelon>("Trevor Edwards"));
-    fruits.push_back(std::make_shared<Honeydew>("Lucas Switzer"));
+    fruits.push_back(std::make_shared<HoneyDew>("Lucas Switzer"));
 
     // Don't edit below
     std::srand(1996);
