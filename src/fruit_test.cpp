@@ -7,6 +7,7 @@
 
 #include "fruit.h"
 #include "watermelon.h"
+#include "orange.h"
 
 #include "honeydew.h"
 
@@ -20,6 +21,7 @@ int main() {
     fruits.push_back(std::make_shared<Watermelon>("Trevor Edwards"));
     fruits.push_back(std::make_shared<HoneyDew>("Lucas Switzer"));
 
+    fruits.push_back(std::make_shared<Orange>("Trevor2 Edwards"));
     // Don't edit below
     std::srand(1996);
     for (auto itr = fruits.begin(); itr != fruits.end(); itr++) {
