@@ -4,9 +4,11 @@
 #include <vector>
 // Enables endl
 #include <iostream>
+#include <stdio.h>
 
 #include "fruit.h"
 #include "watermelon.h"
+#include "orange.h"
 
 // Enables us to use cout and endl without prepending std::
 using namespace std;
@@ -16,6 +18,7 @@ int main() {
  
     // Add your name and fruit  here!
     fruits.push_back(std::make_shared<Watermelon>("Trevor Edwards"));
+    fruits.push_back(std::make_shared<Orange>("Ning Wang"));
     // Don't edit below
     std::srand(1996);
     for (auto itr = fruits.begin(); itr != fruits.end(); itr++) {
