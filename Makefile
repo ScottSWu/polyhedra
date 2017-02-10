@@ -13,10 +13,10 @@ build:
 $(BIN)/%.o: src/%.cpp
 	$(CC) $(CFLAGS) -c -I include "$<" -o "$@"
 
-polyhedron: $(BIN) $(OBJ)
+fruit: $(BIN) $(OBJ)
 
-polyhedron_test.x: polyhedron
+fruit_test.x: fruit
 	$(CC) $(CFLAGS) -I include $(OBJ) -o "$@"
 
-test: polyhedron_test.x
-	./polyhedron_test.x
+test: fruit_test.x
+	./fruit_test.x
