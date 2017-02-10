@@ -8,6 +8,8 @@
 #include "fruit.h"
 #include "watermelon.h"
 
+#include "honeydew.h"
+
 // Enables us to use cout and endl without prepending std::
 using namespace std;
 
@@ -16,6 +18,8 @@ int main() {
  
     // Add your name and fruit  here!
     fruits.push_back(std::make_shared<Watermelon>("Trevor Edwards"));
+    fruits.push_back(std::make_shared<Honeydew>("Lucas Switzer"));
+
     // Don't edit below
     std::srand(1996);
     for (auto itr = fruits.begin(); itr != fruits.end(); itr++) {
