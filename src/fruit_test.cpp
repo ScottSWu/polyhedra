@@ -4,9 +4,11 @@
 #include <vector>
 // Enables endl
 #include <iostream>
+#include <stdio.h>
 
 #include "fruit.h"
 #include "watermelon.h"
+#include "strawberry.h"
 #include "orange.h"
 
 #include "honeydew.h"
@@ -16,11 +18,13 @@ using namespace std;
 
 int main() {
     std::vector<std::shared_ptr<Fruit>> fruits;
- 
+
     // Add your name and fruit  here!
     fruits.push_back(std::make_shared<Watermelon>("Trevor Edwards"));
     fruits.push_back(std::make_shared<HoneyDew>("Lucas Switzer"));
-
+    fruits.push_back(std::make_shared<Orange>("Nicolas Buitrago"));
+    fruits.push_back(std::make_shared<Orange>("Ning Wang"));
+    fruits.push_back(std::make_shared<Strawberry>("Me"));
     fruits.push_back(std::make_shared<Orange>("Trevor2 Edwards"));
     // Don't edit below
     std::srand(1996);
@@ -45,4 +49,3 @@ int main() {
     printf("All fruits are delicious!\n");
     return 0;
 }
-

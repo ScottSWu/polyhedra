@@ -1,24 +1,24 @@
+
 #ifndef _ORANGE
 #define _ORANGE
 
 #include <string>
-
 #include "fruit.h"
 
-class Orange : public Fruit {
-	private:
-		double _weight;
-	public:
-		Orange(std::string author);
+using namespace std;
 
-		virtual ~Orange();
+class Orange : public Fruit{
+  private:
+          double _weight;
+  public:
+          Orange(string author);
 
-		virtual std::string get_name();
+          virtual ~Orange();
 
-		virtual double get_weight();
+          virtual string get_name();
 
-		virtual bool is_delicious();
+          virtual double get_weight();
 
+          virtual bool is_delicious();
 };
-
 #endif
