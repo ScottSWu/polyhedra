@@ -1,3 +1,4 @@
+
 #ifndef _ORANGE
 #define _ORANGE
 
@@ -18,7 +19,6 @@ class Orange : public Fruit {
 		virtual double get_weight();
 
 		virtual bool is_delicious();
-
 };
 
 #endif
