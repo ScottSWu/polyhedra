@@ -1,37 +1,38 @@
-# polyhedra
+# fruits
 
 ### Git and C++ introduction
+#### Original Tutorial by Scott Wu
 
 # Overview
 
-This is meant to be an introduction to using Git and C++ syntax. Complete this
-tutorial after doing a number of HackerRank problems (especially those in
-**Classes** and **Inheritance**).
+This is meant to be an introduction to using Git and a brief glimpse at C++.
 
-We will be implementing different types of convex polyhedra and computing their
-volumes. The goal of this assignment is not to know how to compute the volume
-of a Snub Dodecahedron, but to get a sense of Git and OOP in C++.
+We will be implementing simple C++ functions. The goal of this tutorial is to get a sense of Git and OOP in C++. It is highly recommended that you do this
+with a partner who is also learning git and/or cpp.
+
+As an aside, c++ is often written cpp for its file type, search queries and limited ascii representations, so keep that in mind if you frequent Stack Overflow. I (trevor) also prefer to write cpp as it is faster than
+holding shift and hitting the + key.
 
 # Introduction
 
-## Pick a polyhedron
+## Pick a Fruit
 
-Pick and choose a [uniform convex polyhedron]
-(https://en.wikipedia.org/wiki/List_of_uniform_polyhedra#Convex_uniform_polyhedra)
-. This will be the polyhedron you implement for this project.
+We will be using fruit as our example here, so please pick your favorite fruit now.
 
 ## Fork this repository
 
-Head to https://github.com/ScottSWu/polyhedra, and click on the *Fork* button.
+Head to https://github.com/TrevorEdwards/fruits, and click on the *Fork* button.
 
 ![https://scwu.io/media/qizwpy.png](https://scwu.io/media/qizwpy.png)
 
-This will create a new repository under your own account.
+This will create a new git repository under your own GitHub account. It  will be
+identical to this one, but you will have full write access to it.
 
 ## Clone the repository to your computer
 
 Install [Git](https://git-scm.com/). It's recommended you run in a unix-based
-environment.
+environment. While there are interfaces available for git, you should
+strongly consider using the bash terminal (or git bash for Windows).
 
 On Windows or Mac, download and run their installer. On Linux distributions,
 you can use the package manager and run one of the following from the terminal:
@@ -44,24 +45,24 @@ sudo yum install git-all # Fedora
 Verify `git` is installed by running `git --version`. Then clone this repository
 with:
 ```
-git clone https://github.com/<your username>/polyhedra.git
+git clone https://github.com/<your username>/fruits.git
 ```
 
 A folder called `polyhedra` will be created with the files from the repository.
-Move to this new directory in the terminal with `cd polyhedra`.
+Enter this new directory in the terminal using `cd polyhedra`.
 
 # Create files
 
-We want to create two files, a *header* file and *source* file. The *header*
+We want to create two files, a *header* file ending in .h and *source* file ending in .cpp. The *header*
 file defines the structure of your class so that other programs can use it
 without having to read and compile the implementation details. Those
 implementation details go in the *source* file.
 
-* Create a file in the `include` folder and name it `polyhedron_name.h`
-* Create a file in the `src` folder and name it `polyhedron_name.cpp`
+* Create a file in the `include` folder and name it `fruit_name.h`
+* Create a file in the `src` folder and name it `fruit_name.cpp`
 
-The rest of this project will be adding your polyhedron to this repository. At
-any time, feel free to refer to the `snub_dodecahedron.{h, cpp}` as an example.
+The rest of this project will be adding your fruit to this repository. At
+any time, feel free to refer to the `watermelon.{h, cpp}` as an example.
 
 # Header File
 
@@ -81,8 +82,8 @@ compiled.
 Pick a unique name and add the following to your header file.
 
 ```cpp
-#ifndef _POLYHEDRON_NAME
-#define _POLYHEDRON_NAME
+#ifndef _FRUIT_NAME
+#define _FRUIT_NAME
 
 ...
 
@@ -93,23 +94,23 @@ Pick a unique name and add the following to your header file.
 
 Not all classes are available by default. We can *include* the header files of
 classes that we need so we can use them in our header file. This time, we will
-need two classes - `string` and `Polyhedron`.
+need two classes - `string` and `Fruit`.
 
 ```cpp
 // The angle brackets signify this is a system library
 #include <string>
 
 // The quotations signify this is a user library (in the same project)
-#include "polyhedron.h"
+#include "fruit.h"
 ```
 
 ## Define the class
 
-Our new polyhedron will be a subclass of the `Polyhedron` class. We use the
+Our new fruit will be a subclass of the `Fruit` class. We use the
 colon (`:`) to define this.
 
 ```cpp
-class PolyhedronName : public Polyhedron {
+class FruitName : public Fruit {
 
 };
 ```
@@ -124,28 +125,29 @@ deleted in code).
 // Anything following this will be a public member of the class
 public:
     // Constructor - takes the author's name as an input
-    PolyhedronName(std::string author);
+    FruitName(std::string author);
     // Destructor
-    ~PolyhedronName();
+    ~FruitName();
 ```
 
 ## Define the inherited functions
 
-Since we have subclassed `Polyhedron`, we can override certain `virtual`
-functions from the original `Polyhedron` class.
+Since we have subclassed `Fruit`, we can (and must\*) override `virtual`
+functions from the original `Fruit` class. (\*You will quickly learn that cpp is
+a language full of exceptions. Feel free to google *pure virtual functions*).
 
-Take a look at `polyhedron.h` from the `include` folder. Copy any function with
+Take a look at `fruit.h` from the `include` folder. Copy any function with
 the `virtual` modifier into your own class.
 
 ```cpp
     virtual std::string get_name();
-    virtual unsigned int get_faces();
+    virtual bool is_delicious();
     ...
 ```
 
 # Source File
 
-Now that our new polyhedron is defined in the header file, we can fill in the
+Now that our new fruit is defined in the header file, we can fill in the
 implementation details.
 
 ## Include the header file
@@ -153,7 +155,7 @@ implementation details.
 The first step in the source file is to include the header file.
 
 ```cpp
-#include "polyhedron_name.h"
+#include "fruit_name.h"
 ```
 
 ## Implement the constructor and destructor
@@ -164,16 +166,17 @@ proper parameters and also call the constructor of the super class. Feel free
 to define any other variables here.
 
 ```cpp
-PolyhedronName::PolyhedronName(std::string author) : Polyhedron(author) {
+FruitName::FruitName(std::string author) : Fruit(author) {
     ...
 }
 ```
 
-The destructor starts with a tilde, and is useful for cleaning up any memory.
+The destructor starts with a tilde, and is useful for cleaning up any allocated
+memory resources (such as custom data structures).
 This will probably be empty, since we don't really have much to clean up.
 
 ```cpp
-PolyhedronName::~PolyhedronName() {
+FruitName::~FruitName() {
 }
 ```
 
@@ -183,40 +186,40 @@ All other functions in the header file are written in a similar fashion to the
 constructor and destructor.
 
 ```cpp
-std::string PolyhedronName::get_name() {
-    return "Polyhedron Name";
+std::string FruitName::get_name() {
+    return "Fruit Name";
 }
 ```
 
-Again, refer to `snub_dodecahedron.cpp` if you're unsure about implementation.
+Again, refer to `watermelon.cpp` if you're unsure about implementation.
 
-# Add your polyhedron
+# Add your fruit
 
 Your class is now defined and implemented, but it's not actually used anywhere
-yet. The final thing we want to do is edit `src/polyhedron_test.cpp` to create
-an instance of our polyhedron.
+yet. The final thing we want to do is edit `src/fruit_test.cpp` to create
+an instance of our fruit.
 
 The first line to add is an include statement before `main` referencing our
 header file.
 
 ```cpp
-#include "polyhedron_name.h"
+#include "fruit_name.h"
 ```
 
 Then we can instantiate a new object.
 ```cpp
-    // Add your name and polyhedron here!
-    polyhedra.push_back(std::make_shared<PolyhedronName>("Your Name"));
+    // Add your name and fruit here!
+    fruits.push_back(std::make_shared<FruitName>("Your Name"));
 ```
 
 # Test your work
 
 To compile and test your class, head back to the terminal (which should be
-in the `polyhedra` directory) and run `make test`.
+in the `fruits` directory) and run `make test`.
 
 If you have any compile errors, it will point to the source in code. Fix these.
 
-Otherwise it will print info and run tests on your polyhedron.
+Otherwise it will print info and run tests on your fruit.
 
 # Commit and push
 
@@ -232,6 +235,10 @@ committed.
 Commit with `git commit` and add your message. Alternatively you can use
 `git commit -m "<message>"` to add a message directly from the command line.
 
+Writing good commit messages is an important skill as it represents a summary of your change.
+A common style is to write in the present tense and succinctly describe your changes. For example,
+you could write "add watermelon.h and watermelon.cpp"
+
 # Send a pull request to add to the main repository
 
 ## Make sure the repo is up to date with the main repository
@@ -241,7 +248,7 @@ what the main repository is, run `git remote -v`. `origin` identifies your fork
 while `upstream` identifies the original repo. If there is no `upstream`, add it
 by running:
 ```
-git remote add upstream https://github.com/ScottSWu/polyhedra.git
+git remote add upstream https://github.com/TrevorEdwards/polyhedra.git
 ```
 
 Now you can fetch the changes from upstream.
@@ -263,10 +270,10 @@ git push
 
 ## Send a pull request
 
-Head to the main repository page https://github.com/ScottSWu/polyhedra and
+Head to the main repository page https://github.com/TrevorEdwards/polyhedra and
 click on the "Pull requests" tab and create a new pull request.
 
-Click "compare accross forks" to show all forks of the project. In the
+Click "compare across forks" to show all forks of the project. In the
 "compare" tab, change it from "compare: master" to your fork. Then hit
 "Create pull request", fill out the information and submit.
 
@@ -276,7 +283,7 @@ Click "compare accross forks" to show all forks of the project. In the
 ## Editing a branch
 
 If you need to make additional edits after sending the pull request, make
-changes directly to your local files, commit, fetch rebase and push them as
+changes directly to your local files, commit, fetch, rebase, and push them as
 normal. They will update automatically on the pull request online.
 
 ```
